@@ -107,10 +107,6 @@ spec:
             medium: Memory
             sizeLimit: 1Gi
       dnsPolicy: ClusterFirst
-      tolerations:
-        - key: nvidia.com/gpu
-          operator: Exists
-          effect: NoSchedule
   strategy:
     type: Recreate
   revisionHistoryLimit: 10
