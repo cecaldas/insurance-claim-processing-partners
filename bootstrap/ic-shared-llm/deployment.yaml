@@ -26,7 +26,6 @@ spec:
             limits:
               cpu: '8'
               memory: 24Gi
-              nvidia.com/gpu: '1'
             requests:
               cpu: '6'
           readinessProbe:
@@ -60,6 +59,8 @@ spec:
               value: /models-cache
             - name: PORT
               value: '3000'
+            - name: QUANTIZE
+              value: 'bitsandbytes'
             - name: HOSTNAME
               value: '0.0.0.0'
             - name: HUGGING_FACE_HUB_TOKEN
