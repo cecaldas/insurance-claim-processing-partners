@@ -24,10 +24,11 @@ spec:
       containers:
         - resources:
             limits:
-              cpu: '8'
-              memory: 24Gi
+              cpu: '2'
+              memory: 2Gi
             requests:
-              cpu: '6'
+              cpu: '1'
+              memory: 1Gi
           readinessProbe:
             httpGet:
               path: /health
@@ -50,17 +51,15 @@ spec:
             failureThreshold: 3
           env:
             - name: MODEL_ID
-              value: mistralai/Mistral-7B-Instruct-v0.2
+              value: google/flan-t5-small
             - name: MAX_INPUT_LENGTH
-              value: '4096'
+              value: '416'
             - name: MAX_TOTAL_TOKENS
-              value: '8192'
+              value: '96'
             - name: HUGGINGFACE_HUB_CACHE
               value: /models-cache
             - name: PORT
               value: '3000'
-            - name: QUANTIZE
-              value: 'bitsandbytes'
             - name: HOSTNAME
               value: '0.0.0.0'
             - name: HUGGING_FACE_HUB_TOKEN
