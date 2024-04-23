@@ -8,7 +8,7 @@ from langchain.evaluation import load_evaluator
 from langchain.embeddings import HuggingFaceEmbeddings
 
 INFERENCE_SERVER_URL = "http://llm.ic-shared-llm.svc.cluster.local:3000"
-MAX_NEW_TOKENS = 512
+MAX_NEW_TOKENS = 96
 TOP_K = 10
 TOP_P = 0.95
 TYPICAL_P = 0.95
@@ -27,13 +27,13 @@ def infer_with_template(input_text, template):
         streaming=True,
         verbose=False,
     )
-    
+
     PROMPT = PromptTemplate.from_template(template)
-    
+
     llm_chain = LLMChain(llm=llm, prompt=PROMPT)
-    
+
     return llm_chain.run(input_text)
-    
+
 def similarity_metric(predicted_text, reference_text):
     embedding_model = HuggingFaceEmbeddings()
     evaluator = load_evaluator("embedding_distance", embeddings=embedding_model)
