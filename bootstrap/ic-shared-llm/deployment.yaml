@@ -55,7 +55,7 @@ spec:
             - name: MAX_INPUT_LENGTH
               value: '416'
             - name: MAX_TOTAL_TOKENS
-              value: '96'
+              value: '512'
             - name: HUGGINGFACE_HUB_CACHE
               value: /models-cache
             - name: PORT
