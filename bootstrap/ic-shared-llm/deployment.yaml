@@ -24,11 +24,11 @@ spec:
       containers:
         - resources:
             limits:
-              cpu: '2'
-              memory: 2Gi
+              cpu: '4'
+              memory: 8Gi
             requests:
-              cpu: '1'
-              memory: 1Gi
+              cpu: '2'
+              memory: 6Gi
           readinessProbe:
             httpGet:
               path: /health
@@ -51,7 +51,7 @@ spec:
             failureThreshold: 3
           env:
             - name: MODEL_ID
-              value: google/flan-t5-small
+              value: google/flan-t5-large
             - name: MAX_INPUT_LENGTH
               value: '416'
             - name: MAX_TOTAL_TOKENS
