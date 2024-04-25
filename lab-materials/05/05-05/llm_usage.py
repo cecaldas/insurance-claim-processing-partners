@@ -12,7 +12,7 @@ MAX_NEW_TOKENS = 96
 TOP_K = 10
 TOP_P = 0.95
 TYPICAL_P = 0.95
-TEMPERATURE = 0.5
+TEMPERATURE = 0.9
 REPETITION_PENALTY = 1.03
 
 def infer_with_template(input_text, template):
