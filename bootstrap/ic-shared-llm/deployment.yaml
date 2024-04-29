@@ -44,11 +44,11 @@ spec:
           protocol: TCP
         resources:
           limits:
-            cpu: '4'
-            memory: 8Gi
+            cpu: '8'
+            memory: 16Gi
           requests:
-            cpu: '4'
-            memory: 8Gi
+            cpu: '8'
+            memory: 16Gi
         readinessProbe:
           httpGet:
             path: /
