@@ -26,6 +26,8 @@ spec:
           value: /.ollama/models
         - name: OLLAMA_HOST
           value: 0.0.0.0
+        - name: PORT
+          value: '3000'          
         - name: OLLAMA_KEEP_ALIVE
           value: '-1m'
         securityContext:
