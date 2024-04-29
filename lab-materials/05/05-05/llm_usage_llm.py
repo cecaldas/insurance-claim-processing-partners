@@ -6,11 +6,6 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain.evaluation import load_evaluator
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
-from langchain_community.llms import Ollama
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain.prompts import PromptTemplate
 
 INFERENCE_SERVER_URL = "http://llm.ic-shared-llm.svc.cluster.local:3000"
 MAX_NEW_TOKENS = 96
@@ -19,18 +14,18 @@ TOP_P = 0.95
 TYPICAL_P = 0.95
 TEMPERATURE = 0.9
 REPETITION_PENALTY = 1.03
-MODEL = "mistral"
 
 def infer_with_template(input_text, template):
-    # LLM definition
-    llm = Ollama(
-        base_url=INFERENCE_SERVER_URL,
-        model=MODEL,
+    llm = HuggingFaceTextGenInference(
+        inference_server_url=INFERENCE_SERVER_URL,
+        max_new_tokens=MAX_NEW_TOKENS,
+        top_k=TOP_K,
         top_p=TOP_P,
+        typical_p=TYPICAL_P,
         temperature=TEMPERATURE,
-        num_predict=512,
-        repeat_penalty=1.03,
-        callbacks=[StreamingStdOutCallbackHandler()]
+        repetition_penalty=REPETITION_PENALTY,
+        streaming=True,
+        verbose=False,
     )
 
     PROMPT = PromptTemplate.from_template(template)
