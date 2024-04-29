@@ -96,7 +96,27 @@ spec:
   project: default
   source:
     path: lab-materials/05/app
-    repoURL: https://github.com/rh-aiservices-bu/insurance-claim-processing.git
+    repoURL: cat <<EOF | oc apply -f -
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: claim-insurance-app
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: user1
+  project: default
+  source:
+    path: lab-materials/05/app
+    repoURL: https://github.com/ritzshah/insurance-claim-processing-partners.git
+    targetRevision: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions: [CreateNamespace=false]
+EOF
     targetRevision: main
   syncPolicy:
     automated:
