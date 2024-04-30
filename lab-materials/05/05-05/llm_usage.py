@@ -24,7 +24,7 @@ MODEL = "mistral"
 def infer_with_template(input_text, template):
     # LLM definition
     llm = Ollama(
-        base_url=inference_server_url,
+        base_url="http://llm.ic-shared-llm.svc.cluster.local:11434",
         model="mistral",
         top_p=0.92,
         temperature=0.01,
