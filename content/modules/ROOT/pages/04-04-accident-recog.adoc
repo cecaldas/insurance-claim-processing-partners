@@ -15,3 +15,5 @@ To test the model yourself:
 - In your workbench, navigate to the folder `insurance-claim-processing/lab-materials/04`.
 - Look for (and open) the notebook called `04-04-accident-recog.ipynb`
 - Execute the cells of the notebook.
+
+Once you complete this notebook, you can go back to check `03-03-information-extraction.ipynb` and then move onto next lab whcih is `04-05-model-serving.ipynb`.
