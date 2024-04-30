@@ -1,26 +1,30 @@
-# Imports
 import os
 
-import json
-from os import listdir
-from os.path import isfile, join
-
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain.evaluation import load_evaluator
+# Imports
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 from langchain_community.llms import Ollama
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langchain.chains.combine_documents.stuff import StuffDocumentsChain
+from langchain.chains import LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.evaluation import load_evaluator
 
-# LLM Inference Server URL
-inference_server_url = "http://llm.ic-shared-llm.svc.cluster.local:11434/"
+INFERENCE_SERVER_URL = "http://llm.ic-shared-llm.svc.cluster.local:11434"
+MAX_NEW_TOKENS = 96
+TOP_K = 10
+TOP_P = 0.95
+TYPICAL_P = 0.95
+TEMPERATURE = 0.9
+REPETITION_PENALTY = 1.03
+MODEL = "mistral"
 
 def infer_with_template(input_text, template):
     # LLM definition
     llm = Ollama(
-        base_url=inference_server_url,
+        base_url="http://llm.ic-shared-llm.svc.cluster.local:11434",
         model="mistral",
         top_p=0.92,
         temperature=0.01,
@@ -28,9 +32,11 @@ def infer_with_template(input_text, template):
         repeat_penalty=1.03,
         callbacks=[StreamingStdOutCallbackHandler()]
     )
-    print(llm)    
-    PROMPT = PromptTemplate(input_variables=["input"], template=template)
-    llm_chain = LLMChain(llm=llm, prompt=PROMPT, verbose=False)
+
+    PROMPT = PromptTemplate.from_template(template)
+
+    llm_chain = LLMChain(llm=llm, prompt=PROMPT)
+
     return llm_chain.run(input_text)
 
 def similarity_metric(predicted_text, reference_text):
