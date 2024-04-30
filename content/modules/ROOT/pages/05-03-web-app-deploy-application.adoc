@@ -116,7 +116,6 @@ spec:
       prune: true
       selfHeal: false
     syncOptions: [CreateNamespace=false]
-EOF
     targetRevision: main
   syncPolicy:
     automated:
