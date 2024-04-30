@@ -1,11 +1,6 @@
 import os
 
-from langchain.llms import HuggingFaceTextGenInference
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain.evaluation import load_evaluator
-from langchain.embeddings import HuggingFaceEmbeddings
+# Imports
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 from langchain_community.llms import Ollama
@@ -24,10 +19,10 @@ MODEL = "mistral"
 def infer_with_template(input_text, template):
     # LLM definition
     llm = Ollama(
-        base_url=INFERENCE_SERVER_URL,
-        model=MODEL,
-        top_p=TOP_P,
-        temperature=TEMPERATURE,
+        base_url=inference_server_url,
+        model="mistral",
+        top_p=0.92,
+        temperature=0.01,
         num_predict=512,
         repeat_penalty=1.03,
         callbacks=[StreamingStdOutCallbackHandler()]
