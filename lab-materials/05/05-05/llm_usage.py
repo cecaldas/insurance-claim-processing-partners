@@ -6,6 +6,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain_community.llms import Ollama
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
 
 INFERENCE_SERVER_URL = "http://llm.ic-shared-llm.svc.cluster.local:11434"
 MAX_NEW_TOKENS = 96
