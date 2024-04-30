@@ -54,7 +54,7 @@ image::04/model-data-connection.png[model connection]
 
 == Create a Model Server
 
-In your project create a model server. Use `Multi-model serving platform`
+In your project create a model server. Use `Multi-model serving platform` and select `Add model server`
 
 * Click **Add model server**
 +
