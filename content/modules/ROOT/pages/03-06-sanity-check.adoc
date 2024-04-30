@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 == What will the pipeline do?
 To make sure that everything works as we would expect it to, and that the model has not been tampered with, we will create a sanity-check pipeline that tests the model through its endpoint. +
-We will test the response time, the response quality, and that the model hash has not changed. +
+We will test the response quality, there are more thinks to check but . +
 And to make sure it stays the same over time, we'll schedule that pipeline.
 
 == Deploy a sanity-check pipeline
