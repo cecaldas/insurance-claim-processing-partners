@@ -5,6 +5,8 @@ As part of our claim processing, we want to extract some information from the te
 
 From the `insurance-claim-processing/lab-materials/03` folder, please open the notebook called `03-03-information-extraction.ipynb` and follow the instructions.
 
-Kindly note that we are using cpus instead of gpus and so output rendered from LLM will be little slower than expected, but the focus is more on the functionality and what can be achieved from OpenShift AI. Please note that you will take atleast 2 to 4 mints to get output from LLM per claim.
+Kindly note that we are using cpus instead of gpus and so output rendered from LLM will be little slower than expected, but the focus is more on the functionality and what can be achieved from OpenShift AI. Please note that you will take atleast 2 to 4 mints to get output gpt each prmpt from LLM per claim, there are three things LLM is asked per claim i.e. sentiment, location adn time. So it takes around 6 mints per claim processing and there are two claims to be processed.
+
+Rather than waiting you can move to Section 04 to finish the lab and then come back to this notebook to check the output.
 
 When done, you can close the notebook and head to the next page.
