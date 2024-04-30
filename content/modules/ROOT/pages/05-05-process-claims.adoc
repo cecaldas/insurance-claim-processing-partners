@@ -131,6 +131,8 @@ Note that by changing claim_id you can change which claim to process. If you set
 Press `Create` and watch it go.
 
 == Check the results
+
+Since the pipeline run is on cpu and LLM takes a little more time, kindly proceed to next section whcih is theory and discus next steps and then come back to the resutls of this pipeline run after 6 to 10 minutes.
 After the pipeline has finished running, you can go to the app and take a look at the claims. +
 Instead of just a long body, you will now see a summary, a location field, an accident time field, and a sentiment field. +
 You can also see that we have new image(s) which have bounding boxes where the damage is.
