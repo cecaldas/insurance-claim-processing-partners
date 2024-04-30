@@ -5,12 +5,10 @@ import json
 from os import listdir
 from os.path import isfile, join
 
-from langchain.llms import HuggingFaceTextGenInference
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain.evaluation import load_evaluator
-from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 from langchain_community.llms import Ollama
