@@ -110,7 +110,7 @@ spec:
   source:
     path: lab-materials/05/app
     repoURL: https://github.com/ritzshah/insurance-claim-processing-partners.git
-    targetRevision: dev
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
