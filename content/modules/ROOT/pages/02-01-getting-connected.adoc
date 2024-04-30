@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 For the purposes of this training session, we have provisioned a single OpenShift cluster, with OpenShift AI deployed on it.
 
-Each person attending this lab will have a unique user account in which to do their work.
+Since the models are hosted on cpus rather than gpus, this particular lab should be used as demo by individual. LLM works slow on cpus and you will see that in this demo when you try to query LLM.
 
 == Environment information
 

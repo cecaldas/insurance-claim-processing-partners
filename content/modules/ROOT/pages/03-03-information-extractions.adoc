@@ -5,4 +5,6 @@ As part of our claim processing, we want to extract some information from the te
 
 From the `insurance-claim-processing/lab-materials/03` folder, please open the notebook called `03-03-information-extraction.ipynb` and follow the instructions.
 
+Kindly note that we are using cpus instead of gpus and so output rendered from LLM will be little slower than expected, but the focus is more on the functionality and what can be achieved from OpenShift AI.
+
 When done, you can close the notebook and head to the next page.
