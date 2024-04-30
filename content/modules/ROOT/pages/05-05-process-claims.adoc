@@ -121,6 +121,8 @@ http://modelmesh-serving.{user}:8008
 This is the same route to the object detection endpoint that was used earlier in the workshop. +
 When done it should look something like this:
 
+You can refresh the end point after each task completion to show the change in the output for Claim 3.
+
 [.bordershadow]
 image::05/05-run-settings-create-pipeline.png[run settings]
 
