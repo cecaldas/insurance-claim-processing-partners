@@ -8,7 +8,7 @@ For that, we will use a pipeline that can either be run ad-hoc or scheduled just
 
 This pipeline is also a good starting point for creating an ArgoCD or Tekton pipeline which can be automatically triggered.
 
-Note that pipeline have tasks where it access LLM and those tasks will take atleast 2 to 4 minutes each as we are using cpu's rather than gpu's in the backend for LLM.
+Note that pipeline have tasks where it access LLM and those tasks will take atleast 2 to 4 minutes each as we are using cpu's rather than gpu's in the backend for LLM, total pipeline run might be 8 to 10 mints, so while the pipeline is running you can show the LLM pod logs(as admin user) and the pipelinerun and task logs (as user1)
 
 == What's inside the pipeline?
 
@@ -87,7 +87,7 @@ image::05/05-imported-pipeline.png[imported pipeline]
 
 Press `Import Pipeline` and you should see it pop up under your pipelines.
 
-Now go into the settings at the right side and press Create Run to create a new run of the pipeline you just added.
+Now go into the settings at the right side and press Create Run to create a new run of the pipeline you just added. Total pipeline run might be 8 to 10 mints, so while the pipeline is running you can show the LLM pod logs(as admin user) and the pipelinerun and task logs (as user1). You can show OpenShiftAI UI.
 
 [.bordershadow]
 image::05/05-create-run.png[create run]
