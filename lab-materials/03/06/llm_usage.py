@@ -11,6 +11,8 @@ from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain.evaluation import load_evaluator
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.evaluation import load_evaluator
 
 INFERENCE_SERVER_URL = "http://llm.ic-shared-llm.svc.cluster.local:11434"
 MAX_NEW_TOKENS = 96
@@ -40,7 +42,7 @@ def infer_with_template(input_text, template):
     return llm_chain.run(input_text)
 
 def similarity_metric(predicted_text, reference_text):
-    embedding_model = HuggingFaceEmbeddings()
+    embedding_model = OpenAIEmbeddings()
     evaluator = load_evaluator("embedding_distance", embeddings=embedding_model)
     distance_score = evaluator.evaluate_strings(prediction=predicted_text, reference=reference_text)
-    return 1-distance_score["score"]
+    return 1 - distance_score["score"]

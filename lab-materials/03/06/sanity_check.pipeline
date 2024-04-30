@@ -30,131 +30,15 @@
               "kubernetes_shared_mem_size": {},
               "kubernetes_tolerations": [],
               "mounted_volumes": [],
-              "runtime_image": "quay.io/rh-aiservices-bu/rhoai-lab-insurance-claim-sanity-pipeline:1.0",
+              "runtime_image": "quay.io/rshah/rhoai-lab-insurance-claim-processing-pipeline:1.0",
               "filename": "test_response_quality.py"
             },
             "label": "",
             "ui_data": {
               "label": "test_response_quality.py",
-              "image": "/notebook/robert-serving-test/pipelinetest/static/elyra/python.svg",
-              "x_pos": 582,
-              "y_pos": 143,
-              "description": "Run Python script"
-            }
-          },
-          "inputs": [
-            {
-              "id": "inPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Input Port"
-                }
-              }
-            }
-          ],
-          "outputs": [
-            {
-              "id": "outPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Output Port"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "c50bb14f-a036-4af1-b5dc-21e48eb80f7f",
-          "type": "execution_node",
-          "op": "execute-python-node",
-          "app_data": {
-            "component_parameters": {
-              "dependencies": [],
-              "include_subdirectories": false,
-              "outputs": [
-                "responsetime_result.json"
-              ],
-              "env_vars": [],
-              "kubernetes_pod_annotations": [],
-              "kubernetes_pod_labels": [],
-              "kubernetes_secrets": [],
-              "kubernetes_shared_mem_size": {},
-              "kubernetes_tolerations": [],
-              "mounted_volumes": [],
-              "filename": "test_responsetime.py"
-            },
-            "label": "",
-            "ui_data": {
-              "label": "test_responsetime.py",
-              "image": "/notebook/robert-serving-test/pipelinetest/static/elyra/python.svg",
+              "image": "/notebook/user1/my-workbench/static/elyra/python.svg",
               "x_pos": 584,
-              "y_pos": 299,
-              "description": "Run Python script"
-            }
-          },
-          "inputs": [
-            {
-              "id": "inPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Input Port"
-                }
-              }
-            }
-          ],
-          "outputs": [
-            {
-              "id": "outPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Output Port"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "6b595dc7-afb8-46bb-bf52-7cd695ddafb8",
-          "type": "execution_node",
-          "op": "execute-python-node",
-          "app_data": {
-            "component_parameters": {
-              "dependencies": [],
-              "include_subdirectories": false,
-              "outputs": [
-                "security_result.json"
-              ],
-              "env_vars": [],
-              "kubernetes_pod_annotations": [],
-              "kubernetes_pod_labels": [],
-              "kubernetes_secrets": [],
-              "kubernetes_shared_mem_size": {},
-              "kubernetes_tolerations": [],
-              "mounted_volumes": [],
-              "filename": "test_security.py"
-            },
-            "label": "",
-            "ui_data": {
-              "label": "test_security.py",
-              "image": "/notebook/robert-serving-test/pipelinetest/static/elyra/python.svg",
-              "x_pos": 585,
-              "y_pos": 437,
+              "y_pos": 297,
               "description": "Run Python script"
             }
           },
@@ -210,7 +94,7 @@
             "label": "",
             "ui_data": {
               "label": "summarize_results.py",
-              "image": "/notebook/robert-serving-test/pipelinetest/static/elyra/python.svg",
+              "image": "/notebook/user1/my-workbench/static/elyra/python.svg",
               "x_pos": 977,
               "y_pos": 295,
               "description": "Run Python script"
@@ -232,16 +116,6 @@
                 {
                   "id": "a2440b4e-785d-4963-b4e7-ef939be378c1",
                   "node_id_ref": "d0510f0c-fc50-42fc-a598-97e26b34ed88",
-                  "port_id_ref": "outPort"
-                },
-                {
-                  "id": "e896bb1d-ef18-4076-b038-b196f04809bf",
-                  "node_id_ref": "c50bb14f-a036-4af1-b5dc-21e48eb80f7f",
-                  "port_id_ref": "outPort"
-                },
-                {
-                  "id": "9a795afd-f08b-4cc2-94de-2005482041e8",
-                  "node_id_ref": "6b595dc7-afb8-46bb-bf52-7cd695ddafb8",
                   "port_id_ref": "outPort"
                 }
               ]
