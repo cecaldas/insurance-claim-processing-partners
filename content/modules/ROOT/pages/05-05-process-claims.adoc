@@ -8,6 +8,8 @@ For that, we will use a pipeline that can either be run ad-hoc or scheduled just
 
 This pipeline is also a good starting point for creating an ArgoCD or Tekton pipeline which can be automatically triggered.
 
+Note that pipeline have tasks where it access LLM and those tasks will take atleast 2 to 4 minutes each as we are using cpu's rather than gpu's in the backend for LLM.
+
 == What's inside the pipeline?
 
 If you navigate to `insurance-claim-processing/lab-materials/05/05-05` you can see a variety of files. +
