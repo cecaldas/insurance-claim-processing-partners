@@ -97,7 +97,7 @@ image::02/data-connection.png[]
 
 == Create a Pipeline Server
 
-It is highly recommended to create your pipeline server before creating a workbench. So let's do that now!
+It is highly recommended to create your pipeline server before creating a workbench. So let's do that now! Note that you may see `Configure Pipeline`` instead of `Create Pipeline``, Just select that and key in the minio endpoint `http://minio.ic-shared-minio.svc.cluster.local:9000/` and bucket as `user1`
 
 * In your Data Science Project (DSP), click on **Create a pipeline Server**
 +
