@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 == To the lab materials
 
-If you have any feedback regarding this Lab, please use https://github.com/rh-aiservices-bu/insurance-claim-processing/issues[Issues,window=_blank] and https://github.com/rh-aiservices-bu/insurance-claim-processing/pulls[Pull Requests,window=_blank].
+If you have any feedback regarding this Lab, please use https://github.com/ritzshah/insurance-claim-processing-partners/issues[Issues,window=_blank] and https://github.com/ritzshah/insurance-claim-processing-partners/pulls[Pull Requests,window=_blank].
 
 But this section of the lab is not meant for Improvements and Refinements **to the lab**. Instead it is about...
 
