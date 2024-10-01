@@ -29,7 +29,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.namespace
             - name: INFERENCE_SERVER_URL
-              value: http://llm.ic-shared-llm.svc.cluster.local:3000/
+              value: http://llm.ic-shared-llm.svc.cluster.local:11434/
             - name: MAX_NEW_TOKENS
               value: '1024'
             - name: TOP_K

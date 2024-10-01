@@ -22,6 +22,8 @@ REPETITION_PENALTY = 1.03
 MODEL = "mistral"
 
 def infer_with_template(input_text, template):
+
+    print(f"Carregando Ollama")
     # LLM definition
     llm = Ollama(
         base_url="http://llm.ic-shared-llm.svc.cluster.local:11434",
