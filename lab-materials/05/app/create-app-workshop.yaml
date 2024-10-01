@@ -1,0 +1,34 @@
+cat <<EOF | oc apply -f -
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: claim-insurance-app
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: user1
+  project: default
+  source:
+    path: lab-materials/05/app
+    repoURL: cat <<EOF | oc apply -f -
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: claim-insurance-app
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: user1
+  project: default
+  source:
+    path: lab-materials/05/app
+    repoURL: https://github.com/cecaldas/insurance-claim-processing-partners.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions: [CreateNamespace=false]
+EOF
