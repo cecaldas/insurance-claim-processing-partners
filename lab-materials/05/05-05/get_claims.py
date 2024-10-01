@@ -37,6 +37,8 @@ def get_claims(claim_ids=None):
         claim_ids = get_unprocessed_claims()
     else:
         claim_ids = [claim_ids]
+
+    print(f"Criando claims.json: {claim_ids}")    
         
     with open('claims.json', 'w') as f:
         json.dump({
